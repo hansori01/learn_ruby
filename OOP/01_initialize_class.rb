@@ -19,6 +19,7 @@ attr_accessor :name, :height, :weight
 
   def change_info(n, h, w)
     # this tells ruby we are callilng a setter method. not creating a local variable with @
+    # equivalent to sparky.name
     self.name = n
     self.height = h
     self.weight = w
@@ -35,6 +36,10 @@ attr_accessor :name, :height, :weight
     "#{name} weighs #{weight} and is #{height} tall"
   end 
 
+
+  def what_is_self
+    self
+  end
     # def name #renamed from get_name
   #   @name
   # end
@@ -46,10 +51,11 @@ attr_accessor :name, :height, :weight
 end
 
 sparky = GoodDog.new('Sparky', '12 inches', '10 lbs')
-puts sparky.info
+# puts sparky.info
 
 sparky.change_info('Spartacus', '24 inches', '45 lbs')
-puts sparky.info
+# puts sparky.info
+p sparky.what_is_self
 
 # sparky = GoodDog.new('Sparky')
 # fido = GoodDog.new('Fido')
